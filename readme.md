@@ -33,4 +33,4 @@ works:
 Fixes:, keep!: https://github.com/geerlingguy/packer-boxes/issues/96
 
 # Debugging
-`PACKER_LOG=1 packer build -only=qemu windows-10.json`
+`PACKER_LOG=1 packer build -only=qemu windows-10.json > build.log`
