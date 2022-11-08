@@ -8,6 +8,12 @@ source: https://github.com/chef/bento
 ## [Related projects](https://github.com/chef/bento#related-projects)
 Keep this! has other working builds.
 
+## OSX
+[wiki: macOS](https://github.com/chef/bento/wiki/macOS)
+
+## Windows Hosts
+[wiki: Special Note About Building from Windows Hosts](https://github.com/chef/bento/wiki/Windows-Hosts)
+
 # for:
 ## Windows
 https://github.com/boxcutter/windows
