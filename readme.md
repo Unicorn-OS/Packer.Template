@@ -8,9 +8,12 @@ source: https://github.com/chef/bento
 ## [Related projects](https://github.com/chef/bento#related-projects)
 Keep this! has other working builds.
 
-# Windows
+# OS:
+## Windows
 https://github.com/boxcutter/windows
 
+## OS X
+### [timsutton/osx-vm-templates](https://github.com/timsutton/osx-vm-templates)
 
 # other:
 ## geerlingguy
