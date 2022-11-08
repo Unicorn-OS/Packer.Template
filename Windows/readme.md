@@ -7,7 +7,8 @@
 # Secure Boot & TPM
 ## Note: Chef Bento is insecure! It Bypasses TPM & Secure Boot!
 ``` BypassTPMCheck
-BypassSecureBootCheck```
+BypassSecureBootCheck
+```
 
 ## Fix:
 **This can be fixed with qemu virtual tpm device.** [packer docs](https://developer.hashicorp.com/packer/plugins/builders/qemu#vtpm)
