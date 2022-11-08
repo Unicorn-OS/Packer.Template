@@ -7,6 +7,8 @@
 
 _named after [Japanese bento](https://en.wikipedia.org/wiki/Bento)._
 
+Uses [Chef Solo](https://docs.chef.io/chef_solo/) [Provisioner](https://developer.hashicorp.com/packer/plugins/provisioners/chef/chef-solo).
+
 ## [Related projects](https://github.com/chef/bento#related-projects)
 Keep this! has other working builds.
 
