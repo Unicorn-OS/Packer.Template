@@ -1,9 +1,9 @@
 # Packer.Template
 
 # Top!:
-# Chef Bento
-Home: http://chef.github.io/bento/
-source: https://github.com/chef/bento
+# [Chef Bento](https://github.com/chef/bento)
+[Home:](http://chef.github.io/bento/)
+[source:](https://github.com/chef/bento)
 
 ## [Related projects](https://github.com/chef/bento#related-projects)
 Keep this! has other working builds.
