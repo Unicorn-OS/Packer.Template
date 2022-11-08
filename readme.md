@@ -31,3 +31,6 @@ works:
 - https://github.com/geerlingguy/packer-boxes
 - https://github.com/geerlingguy/packer-drupal-vm
 Fixes:, keep!: https://github.com/geerlingguy/packer-boxes/issues/96
+
+# Debugging
+`PACKER_LOG=1 packer build -only=qemu windows-10.json`
