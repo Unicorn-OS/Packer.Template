@@ -8,7 +8,6 @@ source: https://github.com/chef/bento
 ## [Related projects](https://github.com/chef/bento#related-projects)
 Keep this! has other working builds.
 
-# OS:
 ## Windows
 https://github.com/boxcutter/windows
 
