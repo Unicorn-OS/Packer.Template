@@ -5,7 +5,7 @@
 - [Home:](http://chef.github.io/bento/)
 - [source:](https://github.com/chef/bento)
 
-_named after [Japanese bento box](https://en.wikipedia.org/wiki/Bento)._
+_named after [Japanese bento](https://en.wikipedia.org/wiki/Bento)._
 
 ## [Related projects](https://github.com/chef/bento#related-projects)
 Keep this! has other working builds.
