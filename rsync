@@ -1,0 +1,4 @@
+test=192.168.122.84
+ssh $test mkdir -p ~/Packer.Template
+
+rsync -av --append --delete * $test:~/Packer.Template/
