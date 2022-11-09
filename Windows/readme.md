@@ -16,3 +16,6 @@ BypassSecureBootCheck
 # other
 sch:
 https://github.com/search?q=packer+windows
+
+# Issues:
+https://github.com/chef/bento/issues?q=Windows+qemu
