@@ -1,5 +1,5 @@
 # How Packer renames ISO Files?
-It hashes the download url!
+Packer uses [hashicorp/go-getter](https://github.com/hashicorp/go-getter) to fetch isos, hashes the download url and renames the file in packer_cache.
 
 _Discussion:_
 - [ISOs downloaded to packer_cache are hard to identify #1826](https://github.com/hashicorp/packer/issues/1826)
