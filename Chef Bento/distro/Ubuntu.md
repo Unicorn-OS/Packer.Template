@@ -5,4 +5,5 @@ https://github.com/chef/bento/issues/1412
 
 
 # Solution:
-https://github.com/freedomofpress/securedrop-docs/pull/364
+- https://github.com/chef/bento/issues/1405
+- https://github.com/freedomofpress/securedrop-docs/pull/364
