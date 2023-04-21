@@ -13,8 +13,10 @@ install_builders(){
 test(){
     # worked on: 4/21/2023 chef/bento commit b8eca156fc9c29a42baceb7f3c830bfb9a34a769
 
-    # VirtualBox
-    ## Debian
-    ### x86_64
+    # Debian
+    ## VirtualBox
     packer build -only=virtualbox-iso.vm -var-file=os_pkrvars/debian/debian-11-x86_64.pkrvars.hcl ./packer_templates
+
+    ## Qemu
+    packer build --only=qemu.vm -var-file=os_pkrvars/debian/debian-11-x86_64.pkrvars.hcl ./packer_templates
 }
