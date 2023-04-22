@@ -4,7 +4,7 @@
 ## Cause: seems to be trying to install grub on 'sda'? where only '/dev/vda' is available
 ## Solution: Patch 'bento/packer_templates/http/debian/preseed.cfg' by changing 'sda' to 'vda'!
 
-- name: Patch disk 'sda' to 'vda' in preseed.cfg
+- name: Ubuntu - Patch disk 'sda' to 'vda' in preseed.cfg
   ansible.builtin.lineinfile:
     path: "{{ preseed_ubuntu }}"
     regexp: '^d-i grub-installer/bootdev'

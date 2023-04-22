@@ -5,6 +5,7 @@
     repo: 'https://github.com/chef/bento.git'
     dest: "{{ bento_git_dir }}"
     version: "{{ bento_version }}"
+    update: no
 
 - name: install Builders
   ansible.builtin.shell: packer init -upgrade ./packer_templates
