@@ -6,6 +6,6 @@
 
 - name: Patch disk 'sda' to 'vda' on qemu
   ansible.builtin.lineinfile:
-    path: "{{git_dir}}/bento/packer_templates/http/debian/preseed.cfg"
+    path: 
     regexp: '^d-i grub-installer/bootdev'
     line: "d-i grub-installer/bootdev string /dev/vda"

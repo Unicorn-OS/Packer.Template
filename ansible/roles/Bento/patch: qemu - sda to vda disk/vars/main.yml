@@ -1,0 +1,3 @@
+---
+preseed: "/home/{{ ansible_user }}/Documents/preseed.cfg"
+real: "{{bento_git_dir}}/packer_templates/http/debian/preseed.cfg"
