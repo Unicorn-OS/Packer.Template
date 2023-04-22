@@ -1,0 +1,5 @@
+---
+debian_preseed: "/home/{{ ansible_user }}/Documents/preseed.cfg"
+real: "{{bento_git_dir}}/packer_templates/http/debian/preseed.cfg"
+
+qemu_boot_device: vda

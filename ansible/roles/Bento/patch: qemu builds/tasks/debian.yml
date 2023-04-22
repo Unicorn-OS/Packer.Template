@@ -4,8 +4,8 @@
 ## Cause: seems to be trying to install grub on 'sda'? where only '/dev/vda' is available
 ## Solution: Patch 'bento/packer_templates/http/debian/preseed.cfg' by changing 'sda' to 'vda'!
 
-- name: Patch disk 'sda' to 'vda' on qemu
+- name: Patch disk 'sda' to 'vda' in preseed.cfg
   ansible.builtin.lineinfile:
-    path: 
+    path: "{{ debian_preseed }}"
     regexp: '^d-i grub-installer/bootdev'
-    line: "d-i grub-installer/bootdev string /dev/vda"
+    line: "d-i grub-installer/bootdev string /dev/{{qemu_boot_device}}"

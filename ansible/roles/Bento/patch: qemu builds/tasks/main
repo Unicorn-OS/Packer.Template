@@ -1,0 +1,4 @@
+---
+- name: patch Debian
+    ansible.builtin.include_tasks:
+    file: debian.yml
