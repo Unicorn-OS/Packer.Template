@@ -1,4 +1,6 @@
 ---
-- name: patch Debian
-    ansible.builtin.include_tasks:
-    file: debian.yml
+- name: patch vm builds
+  ansible.builtin.include_tasks:
+    file: "{{item}}.yml"
+  loop:
+  - Debian
