@@ -1,0 +1,10 @@
+---
+# https://docs.fedoraproject.org/en-US/fedora/f34/install-guide/advanced/VNC_Installations/
+
+- name: VNC Viewer
+  ansible.builtin.dnf:
+    name:
+      - vinagre
+      # - tigervnc
+    state: latest
+  become: true

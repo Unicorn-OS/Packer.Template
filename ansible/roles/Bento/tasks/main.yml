@@ -1,0 +1,17 @@
+---
+
+- name: Git checkout Chef Bento
+  ansible.builtin.git:
+    repo: 'https://github.com/chef/bento.git'
+    dest: "{{ git_dir }}"
+    version: "{{ bento_version }}"
+
+- name: install Builders
+  ansible.builtin.shell: packer init -upgrade ./packer_templates
+  args:
+    chdir: "{{ git_dir }}"
+    creates: "/home/{{ ansible_user }}/.config/packer/plugins/github.com/hashicorp/qemu"
+
+
+# - include_role:
+#     name: "{{role_path}}/builder: qemu"
