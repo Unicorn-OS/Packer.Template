@@ -1,4 +1,7 @@
 ---
-debian_preseed: "{{bento_git_dir}}/packer_templates/http/debian/preseed.cfg"
+preseed_dir: "{{bento_git_dir}}/packer_templates/http"
+
+preseed_debian: "{{preseed_dir}}/debian/preseed.cfg"
+preseed_ubuntu: "{{preseed_dir}}/ubuntu/preseed.cfg"
 
 qemu_boot_device: vda

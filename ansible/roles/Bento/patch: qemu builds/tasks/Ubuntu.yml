@@ -6,6 +6,6 @@
 
 - name: Patch disk 'sda' to 'vda' in preseed.cfg
   ansible.builtin.lineinfile:
-    path: "{{ preseed_debian }}"
+    path: "{{ preseed_ubuntu }}"
     regexp: '^d-i grub-installer/bootdev'
     line: "d-i grub-installer/bootdev string /dev/{{qemu_boot_device}}"
