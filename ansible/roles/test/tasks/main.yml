@@ -1,0 +1,4 @@
+---
+
+# https://unix.stackexchange.com/questions/402637/tmp-directory-size-in-fedora
+- name: Increase Tmp size
