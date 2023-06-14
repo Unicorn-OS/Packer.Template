@@ -4,7 +4,7 @@
   ansible.builtin.git:
     repo: 'https://github.com/chef/bento.git'
     dest: "{{ bento_git_dir }}"
-    version: "{{ bento_version }}"
+    # version: "{{ bento_version }}" # Breaks
     update: no
 
 - name: install Builders
