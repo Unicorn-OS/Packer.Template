@@ -10,7 +10,7 @@
     
   roles:
   - Bento
-  - monitor/VNC viewer
+  - .test/monitor/vnc
 
   tasks:
   - debug:
