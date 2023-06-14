@@ -2,6 +2,6 @@
 - name: Install 
   ansible.builtin.apt:
     pkg:
-    - foo
-    - foo-tools
+    - vinagre
+    - tigervnc-viewer
   become: true
