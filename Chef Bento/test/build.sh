@@ -16,9 +16,14 @@ test_virtualbox(){
 }
 
 test_qemu(){
+    # Debian & Ubuntu
+    packer build --only=qemu.vm -var-file=os_pkrvars/ubuntu/ubuntu-23.04-x86_64.pkrvars.hcl ./packer_templates
     packer build --only=qemu.vm -var-file=os_pkrvars/ubuntu/ubuntu-22.04-x86_64.pkrvars.hcl ./packer_templates
-    packer build --only=qemu.vm -var-file=os_pkrvars/debian/debian-11-x86_64.pkrvars.hcl ./packer_templates
-    packer build --only=qemu.vm -var-file=os_pkrvars/ubuntu/ubuntu-22.04-x86_64.pkrvars.hcl ./packer_templates
+    packer build --only=qemu.vm -var-file=os_pkrvars/debian/debian-12-x86_64.pkrvars.hcl ./packer_templates
+    packer build --only=qemu.vm -var-file=os_pkrvars/debian/debian-11-x86_64.pkrvars.hcl ./packer_templates    
+
+    # Windows
+    packer build --only=qemu.vm -var-file=os_pkrvars/windows/windows-10gen2-x86_64.pkrvars.hcl ./packer_templates
 
 }
 
