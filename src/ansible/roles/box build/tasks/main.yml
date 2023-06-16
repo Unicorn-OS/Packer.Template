@@ -1,0 +1,7 @@
+# https://www.middlewareinventory.com/blog/ansible-dict/
+
+- name: Add box to dictionary index
+  set_fact: 
+      boxIndex: "{{ userdata | default({}) | combine ({ item.key : item.value }) }}"
+  with_items:
+    - { 'name': 'ubuntu-22.04' , 'file': 'ubuntu-22.04-x86_64.libvirt.box'}

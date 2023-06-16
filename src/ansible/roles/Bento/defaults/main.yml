@@ -1,4 +1,2 @@
 ---
 bento_version: v3.0.0
-
-bento_git_dir: "/home/{{ansible_user}}/.uni/hyperion/packer/bento"
