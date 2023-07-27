@@ -1,5 +1,6 @@
-source arch.sh
-source dir.sh
+source fn/add.sh
+source fn/arch.sh
+source fn/dir.sh
 
 old=ubuntu-22.04
 distro=ubuntu-23.04
@@ -12,15 +13,6 @@ build(){
 	else
 		echo "Building $box"
 		packer build -only=qemu.vm -var-file=os_pkrvars/ubuntu/${distro}-${arch}.pkrvars.hcl ./packer_templates
-	fi
-}
-
-add(){
-	if [ -d "$cache" ]; then
-		vagrant box list
-	else
-		vagrant box add $distro $box
-		echo "Added box"
 	fi
 }
 
