@@ -1,9 +1,8 @@
 source fn/add.sh
 source fn/arch.sh
 source fn/dir.sh
+source distro.sh
 
-old=ubuntu-22.04
-distro=ubuntu-23.04
 box=$dir/builds/$distro-$arch.libvirt.box
 cache=~/.vagrant.d/boxes/$distro
 
