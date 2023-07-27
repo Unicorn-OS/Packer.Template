@@ -1,7 +1,7 @@
+source distro.sh
 source fn/add.sh
 source fn/arch.sh
 source fn/dir.sh
-source distro.sh
 
 box=$dir/builds/$distro-$arch.libvirt.box
 cache=~/.vagrant.d/boxes/$distro
