@@ -1,1 +1,2 @@
-cd ~/.uni/hyperion/packer/bento
+dir=~/.uni/hyperion/packer/bento
+cd $dir
