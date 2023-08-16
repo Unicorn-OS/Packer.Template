@@ -27,10 +27,6 @@ locals {
             "${path.root}/scripts/${var.os_name}/sudoers_${var.os_name}.sh",
             "${path.root}/scripts/_common/vagrant.sh",
             "${path.root}/scripts/${var.os_name}/systemd_${var.os_name}.sh",
-            "${path.root}/scripts/_common/virtualbox.sh",
-            "${path.root}/scripts/_common/vmware_debian_ubuntu.sh",
-            "${path.root}/scripts/_common/parallels.sh",
-            "${path.root}/scripts/${var.os_name}/hyperv_${var.os_name}.sh",
             "${path.root}/scripts/${var.os_name}/cleanup_${var.os_name}.sh",
             "${path.root}/scripts/_common/minimize.sh"
             ] : [null]
@@ -44,20 +40,12 @@ build {
 
   # Linux Shell scipts
   provisioner "shell" {
-    environment_vars = var.os_name == "freebsd" ? [
+    environment_vars = [
       "HOME_DIR=/home/vagrant",
       "http_proxy=${var.http_proxy}",
       "https_proxy=${var.https_proxy}",
-      "no_proxy=${var.no_proxy}",
-      "pkg_branch=quarterly"
-      ] : (
-      var.os_name == "solaris" ? [] : [
-        "HOME_DIR=/home/vagrant",
-        "http_proxy=${var.http_proxy}",
-        "https_proxy=${var.https_proxy}",
-        "no_proxy=${var.no_proxy}"
-      ]
-    )
+      "no_proxy=${var.no_proxy}"
+    ]
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -S -E sh -eux '{{ .Path }}'"
     expect_disconnect = true
     scripts           = local.scripts
