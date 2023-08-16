@@ -142,18 +142,6 @@ variable "ssh_username" {
   type    = string
   default = "vagrant"
 }
-variable "winrm_password" {
-  type    = string
-  default = "vagrant"
-}
-variable "winrm_timeout" {
-  type    = string
-  default = "60m"
-}
-variable "winrm_username" {
-  type    = string
-  default = "vagrant"
-}
 variable "vm_name" {
   type    = string
   default = null
