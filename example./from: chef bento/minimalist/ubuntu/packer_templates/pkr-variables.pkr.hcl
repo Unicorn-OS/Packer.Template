@@ -93,7 +93,8 @@ variable "floppy_files" {
 }
 variable "headless" {
   type        = bool
-  default     = true
+  default     = false
+  #true
   description = "Start GUI window to interact with VM"
 }
 variable "http_directory" {
