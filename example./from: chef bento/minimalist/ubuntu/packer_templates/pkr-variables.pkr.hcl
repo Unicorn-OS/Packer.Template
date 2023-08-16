@@ -87,10 +87,6 @@ variable "disk_size" {
   type    = number
   default = 65536
 }
-variable "floppy_files" {
-  type    = list(string)
-  default = null
-}
 variable "headless" {
   type        = bool
   default     = false
