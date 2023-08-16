@@ -19,9 +19,7 @@ locals {
   http_directory   = var.http_directory == null ? "${path.root}/http" : var.http_directory
   memory           = var.memory == null ? 2048 : var.memory
   output_directory = var.output_directory == null ? "${path.root}/../builds/packer-${var.os_name}-${var.os_version}-${var.os_arch}" : var.output_directory
-  shutdown_command = var.shutdown_command == null ? (
-      var.os_name == "freebsd" ? "echo 'vagrant' | su -m root -c 'shutdown -p now'" : "echo 'vagrant' | sudo -S /sbin/halt -h -p"
-  ) : var.shutdown_command
+  shutdown_command = var.shutdown_command == null ? "echo 'vagrant' | sudo -S /sbin/halt -h -p" : var.shutdown_command
   vm_name = var.vm_name == null ? (
     var.os_arch == "x86_64" ? "${var.os_name}-${var.os_version}-amd64" : "${var.os_name}-${var.os_version}-${var.os_arch}"
   ) : var.vm_name
