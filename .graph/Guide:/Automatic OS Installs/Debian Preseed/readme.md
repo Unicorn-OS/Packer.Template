@@ -7,8 +7,17 @@ Home: https://wiki.debian.org/DebianInstaller/Preseed
 - https://wiki.debian.org/debconf
 
 ## Obtaining the answers given during an interactive installer run
+- https://wiki.debian.org/DebianInstaller/Preseed#Obtaining_the_answers_given_during_an_interactive_installer_run
 >The DebianInstaller logs the answers given during an interactive installation which can then >be used to preseed a noninteractive installation. Those logs can be accessed by giving the --installer option to debconf-get-selections. More information can be found in chapter B.3 of the installation guide.
->-https://wiki.debian.org/DebianInstaller/Preseed#Obtaining_the_answers_given_during_an_interactive_installer_run
+
+- https://www.debian.org/releases/stable/amd64/apbs03.en.html
+>An alternative method is to do a manual installation and then, after rebooting, use the debconf-get-selections from the debconf-utils package to dump both the debconf database and the installer's cdebconf database to a single file:
+>```
+>$ echo "#_preseed_V1" > file
+>$ debconf-get-selections --installer >> file
+>$ debconf-get-selections >> file
+>```
+>However, a file generated in this manner will have some items that should not be preseeded, and the example file is a better starting place for most users.
 
 
 ## Validate()
