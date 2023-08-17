@@ -13,4 +13,4 @@
 
 
 - include_role:
-    name: "{{role_path}}/patch: qemu builds"
+    name: "{{role_path | dirname}}/patch: qemu builds"
