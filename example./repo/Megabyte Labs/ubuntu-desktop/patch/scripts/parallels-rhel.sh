@@ -1,0 +1,1 @@
+../.modules/bento/packer_templates/scripts/_common/parallels-rhel.sh

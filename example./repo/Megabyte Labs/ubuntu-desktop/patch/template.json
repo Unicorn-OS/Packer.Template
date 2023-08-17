@@ -1,0 +1,260 @@
+{
+  "builders": [
+    {
+      "boot_command": "{{ user `boot_command` }}",
+      "boot_wait": "{{ user `boot_wait` }}",
+      "communicator": "ssh",
+      "cpus": "{{ user `cpus` }}",
+      "disk_size": "{{ user `disk_size` }}",
+      "enable_secure_boot": false,
+      "generation": "{{user `hyperv_generation`}}",
+      "http_directory": "{{ user `http_directory` }}",
+      "iso_checksum": "sha256:a435f6f393dda581172490eda9f683c32e495158a780b5a1de422ee77d98e909",
+      "iso_url": "{{ user `iso_url` }}",
+      "memory": "{{ user `memory` }}",
+      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-Hyper-V",
+      "shutdown_command": "{{ user `shutdown_command` }}",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": "{{ user `ssh_port` }}",
+      "ssh_timeout": "{{ user `ssh_timeout` }}",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "switch_name": "{{ user `hyperv_switch` }}",
+      "type": "hyperv-iso",
+      "vm_name": "{{ user `box_basename` }}-{{ user `iso_version` }}"
+    },
+    {
+      "boot_command": "{{ user `boot_command` }}",
+      "boot_wait": "{{ user `boot_wait` }}",
+      "cpus": "{{ user `cpus` }}",
+      "disk_size": "{{ user `disk_size` }}",
+      "guest_os_type": "ubuntu",
+      "http_directory": "{{ user `http_directory` }}",
+      "iso_checksum": "sha256:a435f6f393dda581172490eda9f683c32e495158a780b5a1de422ee77d98e909",
+      "iso_url": "{{ user `iso_url` }}",
+      "memory": "{{ user `memory` }}",
+      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-Parallels",
+      "parallels_tools_flavor": "lin",
+      "prlctl_version_file": ".prlctl_version",
+      "shutdown_command": "{{ user `shutdown_command` }}",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": "{{ user `ssh_port` }}",
+      "ssh_timeout": "{{ user `ssh_timeout` }}",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "type": "parallels-iso",
+      "vm_name": "{{ user `box_basename` }}-{{ user `iso_version` }}"
+    },
+    {
+      "accelerator": "{{ user `accelerator` }}",
+      "boot_command": "{{ user `boot_command` }}",
+      "boot_wait": "{{ user `boot_wait` }}",
+      "cpus": "{{ user `cpus` }}",
+      "disk_interface": "virtio",
+      "disk_size": "{{ user `disk_size` }}",
+      "format": "qcow2",
+      "headless": "{{ user `headless` }}",
+      "http_directory": "{{ user `http_directory` }}",
+      "iso_checksum": "sha256:a435f6f393dda581172490eda9f683c32e495158a780b5a1de422ee77d98e909",
+      "iso_url": "{{ user `iso_url` }}",
+      "memory": "{{ user `memory` }}",
+      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-KVM",
+      "shutdown_command": "{{ user `shutdown_command` }}",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": "{{ user `ssh_port` }}",
+      "ssh_timeout": "{{ user `ssh_timeout` }}",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "type": "qemu",
+      "vm_name": "{{ user `box_basename` }}-{{ user `iso_version` }}"
+    },
+    {
+      "boot_command": "{{ user `boot_command` }}",
+      "boot_wait": "{{ user `boot_wait` }}",
+      "cpus": "{{ user `cpus` }}",
+      "disk_size": "{{ user `disk_size` }}",
+      "guest_additions_path": "VBoxGuestAdditions_{{ .Version }}.iso",
+      "guest_additions_url": "{{ user `guest_additions_url` }}",
+      "guest_os_type": "Ubuntu_64",
+      "hard_drive_interface": "sata",
+      "headless": "{{ user `headless` }}",
+      "http_directory": "{{ user `http_directory` }}",
+      "iso_checksum": "sha256:a435f6f393dda581172490eda9f683c32e495158a780b5a1de422ee77d98e909",
+      "iso_url": "{{ user `iso_url` }}",
+      "memory": "{{ user `memory` }}",
+      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-VirtualBox",
+      "shutdown_command": "{{ user `shutdown_command` }}",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": "{{ user `ssh_port` }}",
+      "ssh_timeout": "{{ user `ssh_timeout` }}",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "type": "virtualbox-iso",
+      "virtualbox_version_file": ".vbox_version",
+      "vm_name": "{{ user `box_basename` }}-{{ user `iso_version` }}"
+    },
+    {
+      "boot_command": "{{ user `boot_command` }}",
+      "boot_wait": "{{ user `boot_wait` }}",
+      "cpus": "{{ user `cpus` }}",
+      "disk_size": "{{ user `disk_size` }}",
+      "guest_os_type": "ubuntu-64",
+      "headless": "{{ user `headless` }}",
+      "http_directory": "{{ user `http_directory` }}",
+      "iso_checksum": "sha256:a435f6f393dda581172490eda9f683c32e495158a780b5a1de422ee77d98e909",
+      "iso_url": "{{ user `iso_url` }}",
+      "memory": "{{ user `memory` }}",
+      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-VMWare",
+      "shutdown_command": "{{ user `shutdown_command` }}",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": "{{ user `ssh_port` }}",
+      "ssh_timeout": "{{ user `ssh_timeout` }}",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "tools_upload_flavor": "linux",
+      "type": "vmware-iso",
+      "vm_name": "{{ user `box_basename` }}-{{ user `iso_version` }}",
+      "vmdk_name": "{{ user `box_basename` }}-{{ user `iso_version` }}",
+      "vmx_data": {
+        "cpuid.coresPerSocket": "1",
+        "ethernet0.connectionType": "nat",
+        "ethernet0.pciSlotNumber": "32"
+      }
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "compression_level": "{{ user `compression_level` }}",
+        "output": "{{ user `build_directory` }}/{{ user `box_basename` }}.{{ .Provider }}.box",
+        "override": {
+          "virtualbox": {
+            "keep_input_artifact": true
+          }
+        },
+        "type": "vagrant",
+        "vagrantfile_template": "{{ template_dir }}/Vagrantfile"
+      }
+    ]
+  ],
+  "provisioners": [
+    {
+      "environment_vars": [
+        "HOME_DIR=/home/vagrant",
+        "HTTP_PROXY={{ user `http_proxy` }}",
+        "HTTPS_PROXY={{ user `https_proxy` }}",
+        "NO_PROXY={{ user `no_proxy` }}"
+      ],
+      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -S -E sh -eux '{{ .Path }}'",
+      "expect_disconnect": true,
+      "override": {
+        "hyperv-iso": {
+          "scripts": [
+            "scripts/update.symlink.sh",
+            "scripts/sshd.symlink.sh",
+            "scripts/networking.symlink.sh",
+            "scripts/sudoers.symlink.sh",
+            "scripts/vagrant.symlink.sh",
+            "scripts/hyperv.symlink.sh",
+            "scripts/cleanup.custom.sh",
+            "scripts/minimize.symlink.sh",
+            "scripts/desktop.custom.sh"
+          ]
+        },
+        "parallels-iso": {
+          "scripts": [
+            "scripts/update.symlink.sh",
+            "scripts/sshd.symlink.sh",
+            "scripts/networking.symlink.sh",
+            "scripts/sudoers.symlink.sh",
+            "scripts/vagrant.symlink.sh",
+            "scripts/parallels.symlink.sh",
+            "scripts/cleanup.custom.sh",
+            "scripts/minimize.symlink.sh",
+            "scripts/desktop.custom.sh"
+          ]
+        },
+        "qemu": {
+          "scripts": [
+            "scripts/update.symlink.sh",
+            "scripts/sshd.symlink.sh",
+            "scripts/networking.symlink.sh",
+            "scripts/sudoers.symlink.sh",
+            "scripts/vagrant.symlink.sh",
+            "scripts/cleanup.custom.sh",
+            "scripts/minimize.symlink.sh",
+            "scripts/desktop.custom.sh"
+          ]
+        },
+        "virtualbox-iso": {
+          "scripts": [
+            "scripts/update.symlink.sh",
+            "scripts/sshd.symlink.sh",
+            "scripts/networking.symlink.sh",
+            "scripts/sudoers.symlink.sh",
+            "scripts/vagrant.symlink.sh",
+            "scripts/virtualbox.symlink.sh",
+            "scripts/cleanup.custom.sh",
+            "scripts/minimize.symlink.sh",
+            "scripts/desktop.custom.sh"
+          ]
+        },
+        "vmware-iso": {
+          "scripts": [
+            "scripts/update.symlink.sh",
+            "scripts/sshd.symlink.sh",
+            "scripts/networking.symlink.sh",
+            "scripts/sudoers.symlink.sh",
+            "scripts/vagrant.symlink.sh",
+            "scripts/vmware.symlink.sh",
+            "scripts/cleanup.custom.sh",
+            "scripts/minimize.symlink.sh",
+            "scripts/desktop.custom.sh"
+          ]
+        }
+      },
+      "scripts": [
+        "scripts/update.symlink.sh",
+        "scripts/sshd.symlink.sh",
+        "scripts/networking.symlink.sh",
+        "scripts/sudoers.symlink.sh",
+        "scripts/vagrant.symlink.sh",
+        "scripts/virtualbox.symlink.sh",
+        "scripts/vmware.symlink.sh",
+        "scripts/parallels.symlink.sh",
+        "scripts/hyperv.symlink.sh",
+        "scripts/cleanup.custom.sh",
+        "scripts/minimize.symlink.sh",
+        "scripts/desktop.custom.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "variables": {
+    "accelerator": "kvm",
+    "boot_command": "c<wait>set gfxpayload=keep<enter><wait>linux /casper/vmlinuz<wait> debug-ubiquity DEBCONF_DEBUG=5 automatic-ubiquity  noprompt url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<wait> ---<enter><wait>initrd /casper/initrd<enter><wait>boot<enter><wait>",
+    "boot_wait": "4s",
+    "box_basename": "Ubuntu-Desktop",
+    "build_directory": "build",
+    "compression_level": "9",
+    "cpus": "2",
+    "description": "Ubuntu Desktop 22.04",
+    "disk_size": "80000",
+    "guest_additions_url": "",
+    "headless": "false",
+    "http_directory": "http",
+    "http_proxy": "{{ env `HTTP_PROXY` }}",
+    "https_proxy": "{{ env `HTTPS_PROXY` }}",
+    "hyperv_generation": "2",
+    "hyperv_switch": "bento",
+    "iso_checksum_url": "https://releases.ubuntu.com/jammy/SHA256SUMS",
+    "iso_url": "https://releases.ubuntu.com/jammy/ubuntu-22.04.3-desktop-amd64.iso",
+    "iso_version": "22.04",
+    "latestos_tag": "ubuntu",
+    "memory": "4096",
+    "no_proxy": "{{ env `NO_PROXY` }}",
+    "shutdown_command": "echo '{{ user `ssh_password` }}' | sudo -S shutdown -P now",
+    "ssh_password": "vagrant",
+    "ssh_port": "22",
+    "ssh_timeout": "230m",
+    "ssh_username": "vagrant",
+    "vagrantup_token": "{{ env `VAGRANT_CLOUD_TOKEN` }}",
+    "vagrantup_user": "Megabyte",
+    "version_description": "Ubuntu Desktop 22.04. Built from the Ubuntu Desktop Live 22.04 image. See https://gitlab.com/megabyte-labs/packer/ubuntu-desktop for more details."
+  }
+}
