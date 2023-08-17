@@ -3,5 +3,5 @@
   ansible.builtin.shell: "vagrant box add {{item.name}} {{item.file}}"
   args:
     chdir: "{{build_dir}}/"
-    creates: "{{ lookup('ansible.builtin.env', 'HOME') }}/.vagrant.d/boxes/ubuntu-22.04"
+    creates: "{{ ansible_env.HOME) }}/.vagrant.d/boxes/ubuntu-22.04"
   loop: "{{box_index}}"
