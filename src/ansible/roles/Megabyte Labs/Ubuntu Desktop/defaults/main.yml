@@ -1,0 +1,3 @@
+repo_dir: "{{ megabyte_dir }}/Ubuntu Desktop"
+
+json_template: template.json
