@@ -1,0 +1,3 @@
+default_builder: qemu
+test_distro: debian
+test_distro_ver: 11

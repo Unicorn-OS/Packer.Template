@@ -1,12 +1,11 @@
-- name: Git checkout Chef Bento
+- name: Git checkout
   ansible.builtin.git:
-    repo: 'https://github.com/chef/bento.git'
-    dest: "{{ bento_git_dir }}"
-    # version: "{{ bento_version }}" # Breaks
+    repo: "https://gitlab.com/megabyte-labs/packer/windows-desktop.git"
+    dest: "{{ megabyte_dir }}/Windows 11 Desktop"
     update: no
 
-- name: install Builders
-  ansible.builtin.shell: packer init -upgrade ./packer_templates
-  args:
-    chdir: "{{ bento_git_dir }}"
-    creates: "/home/{{ ansible_user }}/.config/packer/plugins/github.com/hashicorp/qemu"
+# - name: packer init
+#   ansible.builtin.shell: packer init -upgrade ./packer_templates
+#   args:
+#     chdir: "{{ bento_git_dir }}"
+#     creates: "/home/{{ ansible_user }}/.config/packer/plugins/github.com/hashicorp/qemu"

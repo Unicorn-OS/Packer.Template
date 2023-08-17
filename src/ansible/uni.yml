@@ -1,18 +1,10 @@
 ---
 - hosts: localhost #, fedora, ubuntu
   vars:
-    default_builder: qemu
-    test_distro: debian
-    test_distro_ver: 11
     # Host_vars
     ansible_become_password: u
-    ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
     
   roles:
   - Bento
   - Megabyte Labs
   # - .test/monitor/vnc
-
-  tasks:
-  - debug:
-      msg: "{{lookup('ansible.builtin.env', 'USER')}}"
