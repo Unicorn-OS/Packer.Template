@@ -10,7 +10,8 @@
     
   roles:
   - Bento
-  - .test/monitor/vnc
+  - Megabyte Labs
+  # - .test/monitor/vnc
 
   tasks:
   - debug:

@@ -1,0 +1,1 @@
+packer_dir: "/home/{{ ansible_env.USER }}/.uni/hyperion/packer"

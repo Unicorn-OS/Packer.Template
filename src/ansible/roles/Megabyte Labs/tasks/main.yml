@@ -1,0 +1,11 @@
+- name: Git checkout
+  ansible.builtin.git:
+    repo: "https://gitlab.com/megabyte-labs/packer/windows-desktop.git"
+    dest: "{{ packer_dir }}/Windows 11 Desktop"
+    update: no
+
+# - name: packer init
+#   ansible.builtin.shell: packer init -upgrade ./packer_templates
+#   args:
+#     chdir: "{{ bento_git_dir }}"
+#     creates: "/home/{{ ansible_user }}/.config/packer/plugins/github.com/hashicorp/qemu"

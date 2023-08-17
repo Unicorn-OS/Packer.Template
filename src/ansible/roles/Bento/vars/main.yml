@@ -1,3 +1,0 @@
-bento_git_dir: "/home/{{ansible_user}}/.uni/hyperion/packer/bento"
-
-build_dir: "{{bento_git_dir}}/builds"

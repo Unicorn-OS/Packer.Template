@@ -1,0 +1,3 @@
+bento_git_dir: "{{ packer_dir }}/bento"
+
+build_dir: "{{bento_git_dir}}/builds"
