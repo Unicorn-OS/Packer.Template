@@ -8,4 +8,4 @@
 #   ansible.builtin.shell: packer init -upgrade ./packer_templates
 #   args:
 #     chdir: "{{ bento_git_dir }}"
-#     creates: "/home/{{ ansible_user }}/.config/packer/plugins/github.com/hashicorp/qemu"
+#     creates: "/home/{{ ansible_env.USER }}/.config/packer/plugins/github.com/hashicorp/qemu"
