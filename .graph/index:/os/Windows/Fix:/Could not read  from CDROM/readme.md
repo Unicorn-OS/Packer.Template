@@ -2,6 +2,9 @@
 sch: https://www.google.com/search?q=packer+Could+not+read+from+CDROM+code+0003, https://www.google.com/search?q=Could+not+read+from+CDROM+code+0003
 
 # Solution:
+- https://gist.github.com/chrisoldwood/aeec1e6876dadcc407109896d8d8aac7
+
+else:
 - https://github.com/microsoft/WSL/issues/1043
 
 
