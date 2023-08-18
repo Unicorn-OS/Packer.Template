@@ -24,6 +24,10 @@ works(){
 ./build.sh windows-server-2022-standard-x64-eval-libvirt
 }
 
+box_add(){
+vagrant box add windows-server-2022-standard-x64-eval-libvirt.box --name windows-server-2022
+}
+
 main(){
 pre
 works
