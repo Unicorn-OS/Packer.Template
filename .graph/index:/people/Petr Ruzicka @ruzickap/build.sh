@@ -25,7 +25,11 @@ works(){
 
 box_add(){
 packer_dir=/var/tmp/packer-templates-images
-vagrant box add $packer_dir/windows-server-2022-standard-x64-eval-libvirt.box --name windows-server-2022
+cd $packer_dir
+
+vagrant box add windows-server-2022-standard-x64-eval-libvirt.box --name windows-server-2022
+
+vagrant box add windows-10-enterprise-x64-eval-libvirt.box --name windows-10-enterprise
 }
 
 main(){
