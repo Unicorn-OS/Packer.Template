@@ -1,0 +1,15 @@
+- name: Git checkout
+  ansible.builtin.git:
+    repo: "{{ git_url }}"
+    dest: "{{ repo_dir }}"
+    update: no
+
+- include_role:
+    name: "{{ playbook_dir }}/roles/fn/convert to HCL"
+
+- name: packer init
+  ansible.builtin.shell: packer init -upgrade template.json.pkr.hcl
+  args:
+    chdir: "{{ bento_git_dir }}"
+    creates: "/home/{{ ansible_env.USER }}/.config/packer/plugins/github.com/hashicorp/qemu"
+

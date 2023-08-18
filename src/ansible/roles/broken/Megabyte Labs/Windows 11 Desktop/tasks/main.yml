@@ -1,7 +1,7 @@
 - name: Git checkout
   ansible.builtin.git:
     repo: "https://gitlab.com/megabyte-labs/packer/windows-desktop.git"
-    dest: "{{ megabyte_dir }}/Windows 11 Desktop"
+    dest: "{{ parent_dir }}/Windows 11 Desktop"
     update: no
 
 # - name: packer init

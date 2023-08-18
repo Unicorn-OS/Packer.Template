@@ -6,5 +6,6 @@
     
   roles:
   - Bento
-  - Megabyte Labs
+  - Petr Ruzicka
+  # - broken/Megabyte Labs
   # - .test/monitor/vnc

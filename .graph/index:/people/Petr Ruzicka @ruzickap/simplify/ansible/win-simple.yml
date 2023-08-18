@@ -1,0 +1,88 @@
+---
+- name: Configure host
+  hosts: all
+
+  vars:
+    # renovate: datasource=github-tags depName=bleachbit/bleachbit
+    # renovate: datasource=github-tags depName=PowerShell/Win32-OpenSSH versioning=regex:^v?(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)(\..*)?$
+    openssh_version: 9.2.2.0p1-Beta
+
+  roles:
+    - role: ansible-role-virtio-win
+      virtio_win_iso_path: 'E:\\virtio-win\\'
+      when: ansible_system_vendor == "QEMU"
+
+  tasks:
+    - name: Enable Remote Desktop
+      ansible.windows.win_regedit:
+        path: 'HKLM:\System\CurrentControlSet\Control\Terminal Server'
+        name: fDenyTSConnections
+        data: 0
+        type: dword
+
+    - name: Allow connections from computers running any version of Remote Desktop (less secure)
+      ansible.windows.win_regedit:
+        path: 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
+        name: UserAuthentication
+        data: 0
+        type: dword
+
+    - name: Enable Firewall Inbound Rules Group
+      ansible.windows.win_shell: Enable-NetFirewallRule -DisplayGroup "{{ item }}"
+      loop:
+        - Remote Desktop
+        - Windows Remote Management
+
+    - name: Use the plaintext WinRM transport and force it to use basic authentication
+      ansible.windows.win_shell: winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+
+    - name: Enable Administrator account
+      ansible.windows.win_user:
+        name: Administrator
+        account_disabled: no
+      when: ansible_distribution is search("Microsoft Windows 10")
+
+    - name: Remove all current pagefiles
+      community.windows.win_pagefile:
+        remove_all: yes
+        automatic: no
+        state: absent
+
+    - name: Disable Hibernate Mode
+      ansible.windows.win_command: powercfg -h off
+      changed_when: false
+      when: ansible_distribution is search("Microsoft Windows 10")
+
+    - name: Download OpenSSH
+      ansible.windows.win_get_url:
+        url: https://github.com/PowerShell/Win32-OpenSSH/releases/download/v{{ openssh_version }}/OpenSSH-Win64.zip
+        dest: "%HOMEDRIVE%\\OpenSSH-portable.zip"
+      register: result
+      until: result is succeeded
+
+    - name: Unzip downloaded OpenSSH
+      community.windows.win_unzip:
+        src: "%HOMEDRIVE%\\OpenSSH-portable.zip"
+        dest: "%HOMEDRIVE%\\"
+        delete_archive: yes
+
+    - name: Install OpenSSH
+      ansible.windows.win_shell: "C:\\OpenSSH-Win64\\install-sshd.ps1"
+
+    - name: Set OpenSSH Service to automatic startup and ensure it is up
+      ansible.windows.win_service:
+        name: sshd
+        start_mode: auto
+        state: started
+
+    - name: Enable Firewall for OpenSSH
+      ansible.windows.win_shell: New-NetFirewallRule -DisplayName "ssh" -Direction Inbound -Action Allow -Protocol "TCP" -LocalPort "22"
+
+    - name: Add Vagrant key
+      ansible.windows.win_get_url:
+        url: https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub
+        dest: "%PROGRAMDATA%\\ssh\\administrators_authorized_keys"
+
+    - name: Windows reboot
+      ansible.windows.win_reboot:
+        reboot_timeout: 10000
