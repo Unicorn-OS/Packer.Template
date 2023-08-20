@@ -1,3 +1,12 @@
-parent_dir: "{{packer_dir}}/Petr_Ruzicka"
+parent_dir: "{{ packer_dir }}/Petr_Ruzicka"
+
+repo_dir: "{{ parent_dir }}/packer-templates"
+
+template_dir: "{{ repo_dir }}"
 
 git_url: https://github.com/ruzickap/packer-templates.git
+
+json_template:
+- ubuntu-desktop.json
+- ubuntu-server.json
+- windows.json

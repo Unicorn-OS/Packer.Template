@@ -1,5 +1,6 @@
 - name: convert JSON to HCL2
-  ansible.builtin.shell: "packer hcl2_upgrade {{ json_template }}"
+  ansible.builtin.shell: "packer hcl2_upgrade {{ item }}"
   args:
-    chdir: "{{repo_dir}}"
-    creates: "{{ json_template }}.pkr.hcl"
+    chdir: "{{ template_dir }}"
+    creates: "{{ item }}.pkr.hcl"
+  loop: "{{ json_template }}"

@@ -1,3 +1,0 @@
-repo_dir: "{{ parent_dir }}/packer-templates"
-
-json_template: windows.json
