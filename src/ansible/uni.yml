@@ -1,4 +1,3 @@
----
 - hosts: localhost #, fedora, ubuntu
   vars:
     # Host_vars
@@ -8,4 +7,11 @@
   - Bento
   - Petr Ruzicka
   # - broken/Megabyte Labs
-  # - .test/monitor/vnc
+
+- hosts: localhost
+  vars:
+    # Host_vars
+    ansible_become_password: u    
+  roles:
+  - role: Petr Ruzicka/build
+    tags: [ build, never ]

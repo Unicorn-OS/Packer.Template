@@ -1,0 +1,6 @@
+- name: set Headless false
+  ansible.builtin.replace:
+    path: "{{ template_dir }}/{{ headless_file }}"
+    regexp: "headless=true"
+    replace: "headless=false"
+  when: not headless

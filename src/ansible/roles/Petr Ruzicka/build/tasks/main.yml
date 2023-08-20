@@ -1,0 +1,12 @@
+# - ansible.builtin.include_vars:
+#     dir: "{{ role_path | dirname }}/vars"
+
+- debug:
+    msg: Hello Packer!
+
+- name: Build Windows 10
+  ansible.builtin.shell: "./build.sh windows-10-enterprise-x64-eval-{{ provider }}"
+  args:
+    chdir: "{{ template_dir }}"
+    creates: somelog.txt
+  tags: [ windows10 ]

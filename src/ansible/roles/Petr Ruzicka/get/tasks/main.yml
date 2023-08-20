@@ -10,6 +10,6 @@
 - name: packer init
   ansible.builtin.shell: packer init -upgrade template.json.pkr.hcl
   args:
-    chdir: "{{ bento_git_dir }}"
+    chdir: "{{ template_dir }}"
     creates: "/home/{{ ansible_env.USER }}/.config/packer/plugins/github.com/hashicorp/qemu"
 
