@@ -1,3 +1,4 @@
 dependencies:
   - get
-  - Bento/repo
+  - Bento/get
+  - Bento/debug
