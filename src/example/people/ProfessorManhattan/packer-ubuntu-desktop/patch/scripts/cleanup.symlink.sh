@@ -49,7 +49,7 @@ apt-get -y purge popularity-contest command-not-found friendly-recovery bash-com
 
 # 22.04+ don't have this
 echo "remove the fonts-ubuntu-font-family-console"
-apt-get -y purge fonts-ubuntu-font-family-console || true;
+# apt-get -y purge fonts-ubuntu-font-family-console || true;
 
 # 21.04+ don't have this
 echo "remove the installation-report"

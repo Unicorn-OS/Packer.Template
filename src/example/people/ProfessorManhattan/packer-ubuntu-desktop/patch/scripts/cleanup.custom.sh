@@ -45,7 +45,8 @@ echo "remove obsolete networking packages"
 apt-get -y purge ppp pppconfig pppoeconf
 
 echo "remove packages we don't need"
-apt-get -y purge popularity-contest command-not-found friendly-recovery bash-completion fonts-ubuntu-font-family-console laptop-detect motd-news-config usbutils grub-legacy-ec2
+apt-get -y purge popularity-contest command-not-found friendly-recovery bash-completion laptop-detect motd-news-config usbutils grub-legacy-ec2
+# fonts-ubuntu-font-family-console
 
 echo "remove the console font"
 apt-get -y purge fonts-ubuntu-console || true
