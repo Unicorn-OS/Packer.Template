@@ -9,13 +9,21 @@ autoinstall:
     # otherwise packer tries to connect and exceed max attempts:
     - systemctl stop ssh.service
     - systemctl stop ssh.socket
+  locale: en_US
+  keyboard:
+    layout: us
+    variant: workman
   ssh:
     install-server: yes
     allow-pw: yes
+    authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN1YdxBpNlzxDqfJyw/QKow1F+wvG9hXGoqiysfJOn5Y vagrant insecure public key
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCWeYoHGeS89848sHQ/dNTyzAeZMl8j5VplKobnxQbg3SHdad87TS4ysqwcnjHyo8cq+cgQFrf+ntCwWVKR72IABppS5QYETrMmiswdQlunNIqNSD9XncN8Szs+J7c5OoAw7qATGFat6yfaZUhoP0J4PLvTyfrwJTlBSPaLBnEF3/g9UjPoUCsp0NffrFQAOwT+nR84+h0sNIVMTHl8l33Lam9UbKZuU8HI7PRlD6OLRCmC5H3dVO9Vg3bn4O66Dueb8ziebmkaf63UgQ8KnT4gmQMeYsEb7ole7zD7o8zQNL2e3O4Bdd8Pw8f0Yrm26eJyBOWhC3N78SSUBX7ZlS9/ vagrant
   packages:
     - qemu-guest-agent
     - ansible
     - ubuntu-desktop
+    - openssh-server
   late-commands:
       - 'sed -i "s/dhcp4: true/&\n      dhcp-identifier: mac/" /target/etc/netplan/00-installer-config.yaml'
       - echo 'vagrant ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/vagrant
