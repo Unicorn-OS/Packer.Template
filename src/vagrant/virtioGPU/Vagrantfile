@@ -1,0 +1,19 @@
+# prime: https://github.com/vagrant-libvirt/vagrant-libvirt/issues/1482
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-Desktop-23.04-x86_64"
+
+  config.vm.provider :libvirt do |libvirt|
+    libvirt.cpus = 3
+    libvirt.cputopology :sockets => '1', :cores => '3', :threads => '1'
+    libvirt.memory = 4096
+
+    # Virtio.GPU
+    libvirt.video_type = 'virtio'
+    libvirt.video_accel3d = true
+    libvirt.graphics_gl = true
+    libvirt.graphics_type = 'spice'
+
+    libvirt.graphics_ip = nil
+    libvirt.graphics_port = nil 
+  end
+end
