@@ -9,16 +9,12 @@ autoinstall:
     # otherwise packer tries to connect and exceed max attempts:
     - systemctl stop ssh.service
     - systemctl stop ssh.socket
-  locale: en_US
-  keyboard:
-    layout: us
-    variant: workman
   ssh:
     install-server: yes
     allow-pw: yes
     authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN1YdxBpNlzxDqfJyw/QKow1F+wvG9hXGoqiysfJOn5Y vagrant insecure public key
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCWeYoHGeS89848sHQ/dNTyzAeZMl8j5VplKobnxQbg3SHdad87TS4ysqwcnjHyo8cq+cgQFrf+ntCwWVKR72IABppS5QYETrMmiswdQlunNIqNSD9XncN8Szs+J7c5OoAw7qATGFat6yfaZUhoP0J4PLvTyfrwJTlBSPaLBnEF3/g9UjPoUCsp0NffrFQAOwT+nR84+h0sNIVMTHl8l33Lam9UbKZuU8HI7PRlD6OLRCmC5H3dVO9Vg3bn4O66Dueb8ziebmkaf63UgQ8KnT4gmQMeYsEb7ole7zD7o8zQNL2e3O4Bdd8Pw8f0Yrm26eJyBOWhC3N78SSUBX7ZlS9/ vagrant
   packages:
     - qemu-guest-agent
     - ansible
