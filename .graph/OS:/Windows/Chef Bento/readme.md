@@ -1,6 +1,7 @@
 ```
 to=~/.uni/hyper/packer/bento
-mkdir -p $(dirname $to) ; cd $to
+mkdir -p $(dirname $to) ; cd $(dirname $to)
+
 git clone https://github.com/chef/bento.git
 cd bento
 packer init -upgrade ./packer_templates
