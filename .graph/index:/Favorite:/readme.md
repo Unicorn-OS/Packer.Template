@@ -1,9 +1,7 @@
-# Top!:
+# Favorite.Sources:
 # [Chef Bento](https://github.com/chef/bento)
 - [Home:](http://chef.github.io/bento/)
 - [source:](https://github.com/chef/bento)
-
-_named after [Japanese bento](https://en.wikipedia.org/wiki/Bento)._
 
 Uses [Chef Solo](https://docs.chef.io/chef_solo/) [Provisioner](https://developer.hashicorp.com/packer/plugins/provisioners/chef/chef-solo).
 
@@ -12,23 +10,9 @@ Keep this! has other working builds.
 
 # Boxcutter
 https://github.com/boxcutter
-- 
+- https://github.com/boxcutter/windows
 
-## OSX
-[wiki: macOS](https://github.com/chef/bento/wiki/macOS)
-
-## Windows Hosts
-[wiki: Special Note About Building from Windows Hosts](https://github.com/chef/bento/wiki/Windows-Hosts)
-
-# for:
-## Windows
-https://github.com/boxcutter/windows
-
-## OS X
-### [timsutton/osx-vm-templates](https://github.com/timsutton/osx-vm-templates)
-
-# other:
-## geerlingguy
+# geerlingguy
 works:
 - https://github.com/geerlingguy/packer-boxes
 - https://github.com/geerlingguy/packer-drupal-vm
